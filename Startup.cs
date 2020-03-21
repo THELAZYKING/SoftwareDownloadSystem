@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SoftwareDownloadSystem.Models;
 
 namespace SoftwareDownloadSystem
 {
@@ -21,7 +23,9 @@ namespace SoftwareDownloadSystem
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             services.AddControllersWithViews();
+            services.AddDbContext<SDS_DBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
