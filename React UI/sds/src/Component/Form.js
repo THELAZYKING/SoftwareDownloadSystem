@@ -27,15 +27,15 @@ class MyForm extends React.Component {
 addPostValue(data)
 {
 
-    data.append("ID", "acd");
-    data.append('Employee_Code', JSON.stringify(this.state.Employee_Code));
-    data.append('Software_Name', JSON.stringify(this.state.Software_Name));
-    data.append('Software_Version', JSON.stringify(this.state.Software_Version));
-    data.append('Employee_EmailID', JSON.stringify(this.state.Employee_EmailID));
-    data.append('Tags' , JSON.stringify(this.state.Tags));
-    data.append('Website_Link', JSON.stringify(this.state.Website_Link));
-    data.append('Team_Lead_ID', JSON.stringify(this.state.Team_Lead_ID));
-    data.append('Software_License', JSON.stringify(this.state.Software_License));
+    data.append('ID', "acd");
+    data.append('Employee_Code', JSON.stringify(this.state.EmpNumber));
+    data.append('Software_Name', JSON.stringify(this.state.SoftName));
+    data.append('Software_Version', JSON.stringify(this.state.Version));
+    data.append('Employee_EmailID', JSON.stringify(this.state.Email));
+    data.append('Tags', JSON.stringify(this.state.SoftTags));
+    data.append('Website_Link', JSON.stringify(this.state.WebLink));
+    data.append('Team_Lead_ID', JSON.stringify(this.state.TLName));
+    data.append('Software_License', JSON.stringify(this.state.License));
 
 
 
@@ -53,7 +53,7 @@ var result = this.addPostValue(data);
  headers: {
   'Content-Type': 'application/json'
 },
- body : JSON.stringify(result)
+        body: JSON.stringify(result)
 });
 
 console.log(response.message);
