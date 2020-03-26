@@ -27,6 +27,7 @@ class MyForm extends React.Component {
 addPostValue(data)
 {
   
+<<<<<<< HEAD
    data.append('Employee_Code' , this.state.EmpNumber);
     data.append('Software_Name' , this.state.SoftName);
     data.append('Software_Version' , this.state.Version);
@@ -35,6 +36,17 @@ addPostValue(data)
     data.append('Website_Link' , this.state.WebLink);
     data.append('Team_Lead_ID' , this.state.TLName);
     data.append('Software_License', this.state.License);
+=======
+   data.append('EmpNumber' , JSON.stringify(this.state.EmpNumber));
+   data.append('SoftName' , JSON.stringify(this.state.SoftName));
+   data.append('Version' , JSON.stringify(this.state.Version));
+   data.append('Email' , JSON.stringify(this.state.Email));
+   data.append('SoftTags' , JSON.stringify(this.state.SoftTags));
+   data.append('WebLink' , JSON.stringify(this.state.WebLink));
+   data.append('TLName' , JSON.stringify(this.state.TLName));
+   data.append('License' , JSON.stringify(this.state.License));
+
+>>>>>>> ef21c2157acd44ddc961fbb0590c405a24bd2277
 
    return data;
 }
@@ -47,7 +59,10 @@ var result = this.addPostValue(data);
 
     let response = await fetch('https://localhost:44364/api/SoftwareDownloads', {
  method : 'POST',
- body : result
+ headers: {
+  'Content-Type': 'application/json'
+},
+ body : JSON.stringify(result)
 });
 
 console.log(response.message);
