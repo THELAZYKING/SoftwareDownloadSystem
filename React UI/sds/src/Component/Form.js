@@ -27,15 +27,14 @@ class MyForm extends React.Component {
 addPostValue(data)
 {
   
-   data.append('EmpNumber' , this.state.EmpNumber);
-   data.append('SoftName' , this.state.SoftName);
-   data.append('Version' , this.state.Version);
-   data.append('Email' , this.state.Email);
-   data.append('SoftTags' , this.state.SoftTags);
-   data.append('WebLink' , this.state.WebLink);
-   data.append('TLName' , this.state.TLName);
-   data.append('License' , this.state.License);
-
+   data.append('Employee_Code' , this.state.EmpNumber);
+    data.append('Software_Name' , this.state.SoftName);
+    data.append('Software_Version' , this.state.Version);
+    data.append('Employee_EmailID' , this.state.Email);
+   data.append('Tags' , this.state.SoftTags);
+    data.append('Website_Link' , this.state.WebLink);
+    data.append('Team_Lead_ID' , this.state.TLName);
+    data.append('Software_License', this.state.License);
 
    return data;
 }
@@ -46,7 +45,7 @@ async handleSubmit(e){
 
 var result = this.addPostValue(data);
 
-let response = await fetch('/api/controller', {
+    let response = await fetch('https://localhost:44364/api/SoftwareDownloads', {
  method : 'POST',
  body : result
 });
