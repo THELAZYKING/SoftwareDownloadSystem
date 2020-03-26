@@ -27,14 +27,14 @@ class MyForm extends React.Component {
 addPostValue(data)
 {
   
-   data.append('EmpNumber' , this.state.EmpNumber);
-   data.append('SoftName' , this.state.SoftName);
-   data.append('Version' , this.state.Version);
-   data.append('Email' , this.state.Email);
-   data.append('SoftTags' , this.state.SoftTags);
-   data.append('WebLink' , this.state.WebLink);
-   data.append('TLName' , this.state.TLName);
-   data.append('License' , this.state.License);
+   data.append('EmpNumber' , JSON.stringify(this.state.EmpNumber));
+   data.append('SoftName' , JSON.stringify(this.state.SoftName));
+   data.append('Version' , JSON.stringify(this.state.Version));
+   data.append('Email' , JSON.stringify(this.state.Email));
+   data.append('SoftTags' , JSON.stringify(this.state.SoftTags));
+   data.append('WebLink' , JSON.stringify(this.state.WebLink));
+   data.append('TLName' , JSON.stringify(this.state.TLName));
+   data.append('License' , JSON.stringify(this.state.License));
 
 
    return data;
@@ -48,7 +48,10 @@ var result = this.addPostValue(data);
 
 let response = await fetch('/api/controller', {
  method : 'POST',
- body : result
+ headers: {
+  'Content-Type': 'application/json'
+},
+ body : JSON.stringify(result)
 });
 
 console.log(response.message);
