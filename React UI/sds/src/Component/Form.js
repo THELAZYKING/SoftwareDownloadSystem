@@ -26,27 +26,18 @@ class MyForm extends React.Component {
 
 addPostValue(data)
 {
-  
-<<<<<<< HEAD
-   data.append('Employee_Code' , this.state.EmpNumber);
-    data.append('Software_Name' , this.state.SoftName);
-    data.append('Software_Version' , this.state.Version);
-    data.append('Employee_EmailID' , this.state.Email);
-   data.append('Tags' , this.state.SoftTags);
-    data.append('Website_Link' , this.state.WebLink);
-    data.append('Team_Lead_ID' , this.state.TLName);
-    data.append('Software_License', this.state.License);
-=======
-   data.append('EmpNumber' , JSON.stringify(this.state.EmpNumber));
-   data.append('SoftName' , JSON.stringify(this.state.SoftName));
-   data.append('Version' , JSON.stringify(this.state.Version));
-   data.append('Email' , JSON.stringify(this.state.Email));
-   data.append('SoftTags' , JSON.stringify(this.state.SoftTags));
-   data.append('WebLink' , JSON.stringify(this.state.WebLink));
-   data.append('TLName' , JSON.stringify(this.state.TLName));
-   data.append('License' , JSON.stringify(this.state.License));
 
->>>>>>> ef21c2157acd44ddc961fbb0590c405a24bd2277
+    data.append("ID", "acd");
+    data.append('Employee_Code', JSON.stringify(this.state.Employee_Code));
+    data.append('Software_Name', JSON.stringify(this.state.Software_Name));
+    data.append('Software_Version', JSON.stringify(this.state.Software_Version));
+    data.append('Employee_EmailID', JSON.stringify(this.state.Employee_EmailID));
+    data.append('Tags' , JSON.stringify(this.state.Tags));
+    data.append('Website_Link', JSON.stringify(this.state.Website_Link));
+    data.append('Team_Lead_ID', JSON.stringify(this.state.Team_Lead_ID));
+    data.append('Software_License', JSON.stringify(this.state.Software_License));
+
+
 
    return data;
 }
