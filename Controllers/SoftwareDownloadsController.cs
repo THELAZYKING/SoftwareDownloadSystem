@@ -24,14 +24,14 @@ namespace SoftwareDownloadSystem.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<SoftwareDownload>>> GetsoftwareDownloads()
         {
-            return await _context.softwareDownloads.ToListAsync();
+            return await _context.softwareDownloadsystem.ToListAsync();
         }
 
         // GET: api/SoftwareDownloads/5
         [HttpGet("{id}")]
         public async Task<ActionResult<SoftwareDownload>> GetSoftwareDownload(string id)
         {
-            var softwareDownload = await _context.softwareDownloads.FindAsync(id);
+            var softwareDownload = await _context.softwareDownloadsystem.FindAsync(id);
 
             if (softwareDownload == null)
             {
@@ -75,7 +75,7 @@ namespace SoftwareDownloadSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<SoftwareDownload>> PostSoftwareDownload(SoftwareDownload softwareDownload)
         {
-            _context.softwareDownloads.Add(softwareDownload);
+            _context.softwareDownloadsystem.Add(softwareDownload);
             try
             {
                 await _context.SaveChangesAsync();
@@ -99,13 +99,13 @@ namespace SoftwareDownloadSystem.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<SoftwareDownload>> DeleteSoftwareDownload(string id)
         {
-            var softwareDownload = await _context.softwareDownloads.FindAsync(id);
+            var softwareDownload = await _context.softwareDownloadsystem.FindAsync(id);
             if (softwareDownload == null)
             {
                 return NotFound();
             }
 
-            _context.softwareDownloads.Remove(softwareDownload);
+            _context.softwareDownloadsystem.Remove(softwareDownload);
             await _context.SaveChangesAsync();
 
             return softwareDownload;
@@ -113,7 +113,7 @@ namespace SoftwareDownloadSystem.Controllers
 
         private bool SoftwareDownloadExists(string id)
         {
-            return _context.softwareDownloads.Any(e => e.ID == id);
+            return _context.softwareDownloadsystem.Any(e => e.ID == id);
         }
     }
 }

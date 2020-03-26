@@ -11,7 +11,7 @@ namespace SoftwareDownloadSystem.Models
         public SDS_DBContext(DbContextOptions<SDS_DBContext> options) : base(options)
         {
         }
-        public DbSet<SoftwareDownload> softwareDownloads{get; set;}
+        public DbSet<SoftwareDownload> softwareDownloadsystem{get; set;}
         
 
     }

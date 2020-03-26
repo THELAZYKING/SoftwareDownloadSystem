@@ -20,6 +20,8 @@ namespace SoftwareDownloadSystem.Models
         public string Software_Name { get; set; }
         [Column(TypeName = "nvarchar(50)")]
         public string Software_Version { get; set; }
+        [Column(TypeName = "nvarchar(20)")]
+        public string Software_License { get; set; }        
         [Column(TypeName = "nvarchar(255)")]
         public string Tags { get; set; }
         [Column(TypeName = "nvarchar(255)")]
