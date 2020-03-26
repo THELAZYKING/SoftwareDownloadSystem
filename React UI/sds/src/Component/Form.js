@@ -24,11 +24,34 @@ class MyForm extends React.Component {
         this.handleOptionChange = this.handleOptionChange.bind(this);
     }
 
-handleSubmit(e){
-  e.preventDefault();
-  const data = new FormData(this.state);
+addPostValue(data)
+{
+  
+   data.append('EmpNumber' , this.state.EmpNumber);
+   data.append('SoftName' , this.state.SoftName);
+   data.append('Version' , this.state.Version);
+   data.append('Email' , this.state.Email);
+   data.append('SoftTags' , this.state.SoftTags);
+   data.append('WebLink' , this.state.WebLink);
+   data.append('TLName' , this.state.TLName);
+   data.append('License' , this.state.License);
 
-  console.log(data);
+
+   return data;
+}
+
+async handleSubmit(e){
+  e.preventDefault();
+  var data = new FormData();
+
+var result = this.addPostValue(data);
+
+let response = await fetch('/api/controller', {
+ method : 'POST',
+ body : result
+});
+
+console.log(response.message);
 }
 
 handleOptionChange(e) {
