@@ -27,15 +27,15 @@ class MyForm extends React.Component {
 addPostValue(data)
 {
 
-    data.append('ID', "acd");
-    data.append('Employee_Code', JSON.stringify(this.state.EmpNumber));
-    data.append('Software_Name', JSON.stringify(this.state.SoftName));
-    data.append('Software_Version', JSON.stringify(this.state.Version));
-    data.append('Employee_EmailID', JSON.stringify(this.state.Email));
-    data.append('Tags', JSON.stringify(this.state.SoftTags));
-    data.append('Website_Link', JSON.stringify(this.state.WebLink));
-    data.append('Team_Lead_ID', JSON.stringify(this.state.TLName));
-    data.append('Software_License', JSON.stringify(this.state.License));
+    data.append('id', "21212");
+    data.append('employee_Code', JSON.stringify(this.state.EmpNumber));
+    data.append('software_Name', JSON.stringify(this.state.SoftName));
+    data.append('software_Version', JSON.stringify(this.state.Version));
+    data.append('employee_EmailID', JSON.stringify(this.state.Email));
+    data.append('tags', JSON.stringify(this.state.SoftTags));
+    data.append('website_Link', JSON.stringify(this.state.WebLink));
+    data.append('team_Lead_ID', JSON.stringify(this.state.TLName));
+    data.append('software_License', JSON.stringify(this.state.License));
 
 
 

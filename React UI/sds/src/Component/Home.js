@@ -60,7 +60,7 @@ class HomePage extends React.Component {
     }
 
 async GetRequest(){
-    const response = await fetch('https://reqres.in/api/unknown');
+    const response = await fetch('https://localhost:44364/api/SoftwareDownloads/12354');
     const data = await response.json();
    
     this.setState({ GetData : data, loading : false});
