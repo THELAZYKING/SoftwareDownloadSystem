@@ -1,0 +1,30 @@
+.DataBox{
+    display: inline-block;
+    width: 40%;
+    border: 1px solid rgba(34,36,38,.15);
+    padding: 25px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 60px;
+}
+
+.DataTitle {
+    font-size: 40px;
+    display: inline;
+    font-weight: bold;
+    margin: 15px;
+}
+
+.DataVersion {
+    display: inline;
+    margin-right: 20px;
+    font-size: 15px;
+  font-style: italic;
+    float: right;
+}
+
+.DataWeb {
+    font-size: 20px;
+    margin: 40px;
+}
+
